@@ -16,17 +16,17 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Test') {
             steps {
-                // Build the Angular project
-                sh 'ng build --prod'
+                // Run the tests with FirefoxHeadless
+                sh 'ng test --watch=false --browsers=FirefoxHeadless'
             }
         }
         
-        stage('Test') {
+        stage('Build') {
             steps {
-                // Run the tests
-                sh 'ng test --watch=false --browsers=ChromeHeadless'
+                // Build the Angular project
+                sh 'ng build --configuration production'
             }
         }
         

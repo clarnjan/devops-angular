@@ -4,9 +4,7 @@ module.exports = function(config) {
       frameworks: ['jasmine', '@angular-devkit/build-angular'],
       plugins: [
         require('karma-jasmine'),
-        require('karma-chrome-launcher'),
-        require('karma-jasmine-html-reporter'),
-        require('karma-coverage'),
+        require('karma-firefox-launcher'), // Add Firefox launcher plugin
         require('@angular-devkit/build-angular/plugins/karma')
       ],
       client: {
@@ -15,28 +13,14 @@ module.exports = function(config) {
       jasmineHtmlReporter: {
         suppressAll: true // removes the duplicated traces
       },
-      coverageReporter: {
-        dir: require('path').join(__dirname, './coverage/my-app'),
-        subdir: '.',
-        reporters: [
-          { type: 'html' },
-          { type: 'text-summary' }
-        ]
-      },
       reporters: ['progress', 'kjhtml'],
       port: 9876,
       colors: true,
       logLevel: config.LOG_INFO,
       autoWatch: true,
-      browsers: ['ChromeHeadlessNoSandbox'],
+      browsers: ['Firefox'],
       singleRun: false,
-      restartOnFileChange: true,
-      customLaunchers: {
-        ChromeHeadlessNoSandbox: {
-          base: 'ChromeHeadless',
-          flags: ['--no-sandbox', '--disable-setuid-sandbox']
-        }
-      }
+      restartOnFileChange: true
     });
   };
   
