@@ -29,10 +29,12 @@ module.exports = function(config) {
           base: 'ChromeHeadless',
           flags: [
             '--no-sandbox',
-            '--disable-setuid-sandbox',
             '--disable-gpu',
             '--disable-dev-shm-usage',
-            '--remote-debugging-port=9222'
+            '--disable-setuid-sandbox',
+            '--headless',
+            '--remote-debugging-port=9222',
+            '--disable-software-rasterizer'
           ]
         }
       },
