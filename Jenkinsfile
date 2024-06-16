@@ -26,7 +26,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run the tests
-                sh 'npm test'
+                sh 'ng test --watch=false --browsers=ChromeHeadless'
             }
         }
         
@@ -57,4 +57,3 @@ pipeline {
         }
     }
 }
-
