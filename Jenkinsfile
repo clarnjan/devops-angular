@@ -18,8 +18,8 @@ pipeline {
         
         stage('Test') {
             steps {
-                // Run the tests with FirefoxHeadless
-                sh 'ng test --watch=false --browsers=FirefoxHeadless'
+                // Run the tests
+                sh 'ng test --watch=false --browsers=FChromeHeadless'
             }
         }
         
