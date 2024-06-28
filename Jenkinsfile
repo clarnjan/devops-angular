@@ -40,7 +40,7 @@ pipeline {
                 '''
             }
         }
-        
+        //edit
         stage('Upload Artifact to Nexus') {
             steps {
                 // Upload the artifact to Nexus
