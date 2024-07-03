@@ -8,5 +8,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 4200
+      targetPort: 4200  # Port exposed by the Angular application inside the container
+      nodePort: 31000   # Specify a NodePort within the valid range (30000-32767)
   type: NodePort
+
