@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: angular-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: angular-app
@@ -15,7 +15,6 @@ spec:
       containers:
       - name: angular-app
         image: clarnjan/devopsapp:latest
+        imagePullPolicy: Always
         ports:
-        - containerPort: 4200
-      imagePullSecrets:
-      - name: myregistrykey
+        - containerPort: 80
