@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: angular-app
-        image: clarnjan/devopsapp:latest
+        image: damjandevops/devopsapp:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
